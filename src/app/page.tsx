@@ -1,65 +1,50 @@
 "use client";
-import Image from "next/image";
-import WhyUsCard from "@/components/WhyUsCard";
-import {
-	FaChalkboardTeacher,
-	FaBookReader,
-	FaLaptopCode,
-	FaClipboardCheck,
-	FaTrophy,
-} from "react-icons/fa";
+import HeroSection from "@/components/HeroSection";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
-const whyUsData = [
+const testimonials = [
 	{
-		title: "Experienced and Qualified Instructors",
-		description:
-			"Our team of instructors comprises highly experienced and qualified professionals who have a deep understanding of the IELTS exam format and marking criteria.",
-		icon: <FaChalkboardTeacher className="text-4xl text-red-500" />,
+		quote:
+			"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+		name: "Charles Dickens",
+		title: "A Tale of Two Cities",
 	},
 	{
-		title: "Comprehensive IELTS Preparation",
-		description:
-			"Our IELTS preparation program covers all four sections of the exam: Listening, Reading, Writing, and Speaking. We provide extensive practice materials, mock tests, and personalized feedback.",
-		icon: <FaBookReader className="text-4xl text-blue-500" />,
+		quote:
+			"To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+		name: "William Shakespeare",
+		title: "Hamlet",
 	},
 	{
-		title: "Flexible Learning Options",
-		description:
-			"We offer both classroom-based and online learning options to cater to different learning preferences and schedules.",
-		icon: <FaLaptopCode className="text-4xl text-violet-500" />,
+		quote: "All that we see or seem is but a dream within a dream.",
+		name: "Edgar Allan Poe",
+		title: "A Dream Within a Dream",
 	},
 	{
-		title: "Real-time Practice and Feedback",
-		description:
-			"Our instructors conduct regular mock tests and provide detailed feedback on your performance, helping you identify areas for improvement and offering personalized guidance.",
-		icon: <FaClipboardCheck className="text-4xl text-green-500" />,
+		quote:
+			"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+		name: "Jane Austen",
+		title: "Pride and Prejudice",
 	},
 	{
-		title: "Proven Track Record",
-		description:
-			"Our coaching center has a proven track record of helping students achieve their desired IELTS scores and secure admission to prestigious universities or obtain work visas.",
-		icon: <FaTrophy className="text-4xl text-rose-500" />,
+		quote:
+			"Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+		name: "Herman Melville",
+		title: "Moby-Dick",
 	},
 ];
 
 export default function Home() {
 	return (
-		<>
-			<div>
-				<h1 className="text-2xl sm:text-3xl md:text-4xl text-primary font-bold text-center mb-8 mt-20 ">
-					Why Choose Our IELTS Coaching Center?
-				</h1>
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 px-5 sm:px-10">
-					{whyUsData.map((data, idx) => (
-						<WhyUsCard
-							key={idx}
-							title={data.title}
-							description={data.description}
-							icon={data.icon}
-						/>
-					))}
-				</div>
+		<section>
+			<HeroSection />
+			<div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+				<InfiniteMovingCards
+					items={testimonials}
+					direction="right"
+					speed="slow"
+				/>
 			</div>
-		</>
+		</section>
 	);
 }

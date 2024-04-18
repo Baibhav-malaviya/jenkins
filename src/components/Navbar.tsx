@@ -8,6 +8,7 @@ import {
 	FaPhoneAlt,
 } from "react-icons/fa";
 import { Separator } from "./ui/separator";
+import { ModeToggle } from "./ModeToggler";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="bg-background text-foreground fixed top-0 left-0 right-0">
+		<nav className="bg-background text-foreground fixed top-0 left-0 z-50 right-0">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center">
@@ -25,7 +26,7 @@ const Navbar = () => {
 							href="/"
 							className="flex-shrink-0 text-xl font-bold text-red-500"
 						>
-							Logo
+							Pick Life
 						</Link>
 					</div>
 					{/* Desktop responsive */}
@@ -55,6 +56,7 @@ const Navbar = () => {
 							>
 								<FaPhoneAlt className="inline-block mr-1" /> Contact Us
 							</Link>
+							<ModeToggle />
 						</div>
 					</div>
 					{/* Toggle button */}
@@ -131,6 +133,7 @@ const Navbar = () => {
 					>
 						<FaPhoneAlt className="inline-block mr-1" /> Contact Us
 					</Link>
+					<ModeToggle />
 				</div>
 			</div>
 			<Separator />
