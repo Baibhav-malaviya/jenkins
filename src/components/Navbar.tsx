@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+
+import { Button } from "./ui/button";
 import {
 	FaRegLightbulb,
 	FaBookOpen,
@@ -55,6 +57,9 @@ const Navbar = () => {
 								className="hover:bg-muted px-3 py-2 rounded-md text-sm font-medium"
 							>
 								<FaPhoneAlt className="inline-block mr-1" /> Contact Us
+							</Link>
+							<Link href="/result">
+								<Button>Your Result</Button>
 							</Link>
 							<ModeToggle />
 						</div>
