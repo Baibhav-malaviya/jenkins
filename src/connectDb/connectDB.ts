@@ -1,8 +1,7 @@
 import mongoose, { ConnectOptions } from "mongoose";
 
 // const MONGODB_URI = process.env.MONGODB_URL!;
-const MONGODB_URI =
-	"mongodb+srv://baibhav:Thapar%4098@cluster0.o020bxn.mongodb.net"; //!Here @(only in the) is replaced with %40, because @ is a special character
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const DB_NAME = "pick-life";
 
