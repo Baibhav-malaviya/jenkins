@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import StudentResult from "@/model/result.model";
-import connectDB from "@/connectDb/connectDB";
+import connectDB from "../../../../connectDb/connectDB";
 
 export async function POST(req: NextRequest) {
 	// Connect to MongoDB
