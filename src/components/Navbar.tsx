@@ -138,6 +138,9 @@ const Navbar = () => {
 					>
 						<FaPhoneAlt className="inline-block mr-1" /> Contact Us
 					</Link>
+					<Link href="/contact" className="block">
+						<Button>Your Result</Button>
+					</Link>
 					<ModeToggle />
 				</div>
 			</div>
