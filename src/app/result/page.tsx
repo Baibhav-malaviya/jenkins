@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import CompareResult from "@/components/CompareResult";
 import {
 	Table,
 	TableBody,
@@ -97,11 +96,6 @@ const StudentResult = () => {
 	const [student, setStudent] = useState<Student | null>(null);
 	const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
-
-	// const handleSearch = () => {
-	// 	const foundStudent = students.find((s) => s.rollNumber === rollNumber);
-	// 	setStudent(foundStudent || null);
-	// };
 
 	const handleSearch = async (rollNumber: string) => {
 		setIsLoading(true);
@@ -266,12 +260,6 @@ const StudentResult = () => {
 						</Alert>
 					)
 				)}
-			</div>
-			<div>
-				<CompareResult
-					topFiveStudents={students.slice(0, 5)}
-					currentStudent={student}
-				/>
 			</div>
 		</section>
 	);
