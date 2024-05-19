@@ -1,51 +1,51 @@
-import { NextRequest, NextResponse } from "next/server";
-import StudentResult from "@/model/result.model";
-import connectDB from "../../../../connectDb/connectDB";
+// import multer from "multer";
+// import { NextApiRequest, NextApiResponse } from "next";
 
-export async function POST(req: NextRequest) {
-	// Connect to MongoDB
-	await connectDB();
+// // Set up multer for file storage
+// const upload = multer({
+// 	storage: multer.diskStorage({
+// 		destination: "./public/uploads", // Specify the directory to save the uploaded files
+// 		filename: (req, file, cb) => {
+// 			cb(null, file.originalname); // Use the original file name
+// 		},
+// 	}),
+// });
 
-	try {
-		// Get the request body
-		const body = await req.json();
+// // Disable the default body parser to allow multer to handle the request
+// export const config = {
+// 	api: {
+// 		bodyParser: false,
+// 	},
+// };
 
-		const student = await StudentResult.findOne({
-			rollNumber: body.rollNumber,
-		});
+// // Custom handler to wrap multer's middleware
+// const runMiddleware = (req, res, fn) => {
+// 	return new Promise((resolve, reject) => {
+// 		fn(req, res, (result) => {
+// 			if (result instanceof Error) {
+// 				return reject(result);
+// 			}
+// 			return resolve(result);
+// 		});
+// 	});
+// };
 
-		if (student) {
-			return NextResponse.json({
-				success: false,
-				message: `Student with roll No. ${body.rollNumber} already added`,
-			});
-		}
-		// Create a new student result document
-		const newStudentResult = {
-			studentName: body.studentName,
-			rollNumber: body.rollNumber,
-			course: body.course,
-			subjects: body.subjects.map(
-				(subject: { name: string; score: string }) => ({
-					name: subject.name,
-					score: parseInt(subject.score, 10),
-				})
-			),
-		};
+// const uploadMiddleware = upload.single("file");
 
-		// Save the new student result document
-		const savedStudentResult = await StudentResult.create(newStudentResult);
+// export default async function handler(req, res) {
+// 	if (req.method === "POST") {
+// 		try {
+// 			// Apply the multer middleware
+// 			await runMiddleware(req, res, uploadMiddleware);
 
-		return NextResponse.json({
-			success: true,
-			message: "Student result saved successfully",
-			data: savedStudentResult,
-		});
-	} catch (error) {
-		console.error("Error saving student result:", error);
-		return NextResponse.json(
-			{ error: "Failed to save student result" },
-			{ status: 500 }
-		);
-	}
-}
+// 			// Handle the file upload
+// 			res
+// 				.status(200)
+// 				.json({ message: "File uploaded successfully", file: req.file });
+// 		} catch (error) {
+// 			res.status(500).json({ error: error.message });
+// 		}
+// 	} else {
+// 		res.status(405).json({ message: "Method Not Allowed" });
+// 	}
+// }

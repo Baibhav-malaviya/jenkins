@@ -1,31 +1,38 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-export interface ISubject extends Document {
-	name: string;
-	score: number;
-}
-
-const SubjectSchema: Schema = new Schema({
-	name: { type: String, required: true },
-	score: { type: Number, required: true },
-});
-
-export interface IStudentResult extends Document {
+// Define the TypeScript interfaces
+export interface IResult extends Document {
 	studentName: string;
-	rollNumber: string;
-	course: string;
-	subjects: ISubject[];
+	registrationNumber: string;
+	fathersName: string;
+	mothersName: string;
+	course?: string;
+	resultPdf: string;
+	avatar: string;
 }
 
-const StudentResultSchema: Schema = new Schema({
-	studentName: { type: String, required: true },
-	rollNumber: { type: String, required: true, unique: true },
-	course: { type: String, required: true },
-	subjects: [SubjectSchema],
-});
+// Create the Mongoose schema based on the interfaces
+const ResultSchema: Schema = new Schema(
+	{
+		studentName: { type: String, required: true },
+		registrationNumber: { type: String, required: true, unique: true },
+		fathersName: { type: String, required: true },
+		mothersName: { type: String, required: true },
+		course: { type: String },
+		resultPdf: { type: String, required: true, unique: true },
+		avatar: { type: String, required: true },
+	},
+	{ timestamps: true }
+);
 
-const StudentResult =
-	mongoose.models.results ||
-	mongoose.model<IStudentResult>("results", StudentResultSchema);
+// Export the model
+const Result =
+	mongoose.models.results || mongoose.model<IResult>("results", ResultSchema);
 
-export default StudentResult;
+export default Result;
+
+// const StudentResult =
+// 	mongoose.models.results ||
+// 	mongoose.model<IStudentResult>("results", StudentResultSchema);
+
+// export default StudentResult;

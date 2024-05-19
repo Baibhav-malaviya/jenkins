@@ -26,11 +26,11 @@ interface Subject {
 
 const AddStudentResult = () => {
 	const [studentName, setStudentName] = useState("");
-	const [rollNumber, setRollNumber] = useState("");
-	const [course, setCourse] = useState("");
-	const [subjects, setSubjects] = useState<Subject[]>([
-		{ name: "", score: "" },
-	]);
+	const [registrationNumber, setRegistrationNumber] = useState("");
+	const [selectedFile, setSelectedFile] = useState<File | null>(null);
+	const [studentAvatar, setStudentAvatar] = useState<File | null>(null);
+	const [mothersName, setMothersName] = useState("");
+	const [fathersName, setFathersName] = useState("");
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string>("");
@@ -38,84 +38,72 @@ const AddStudentResult = () => {
 
 	const nameInputRef = useRef<HTMLInputElement>(null);
 
-	const handleSubjectChange = (
-		index: number,
-		event: React.ChangeEvent<HTMLInputElement>
-	) => {
-		const { name, value } = event.target;
-		const updatedSubjects = [...subjects];
-		updatedSubjects[index][name as keyof Subject] = value;
-		setSubjects(updatedSubjects);
+	const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setSelectedFile(e.target.files?.[0] || null);
+	};
+	const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setStudentAvatar(e.target.files?.[0] || null);
 	};
 
-	const handleAddSubject = (e: any) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
-		setSubjects([...subjects, { name: "", score: "" }]);
-	};
-
-	const handleDuplicateSubject = (index: number) => {
-		const duplicatedSubject = { ...subjects[index] };
-		setSubjects([...subjects, duplicatedSubject]);
-	};
-
-	const handleRemoveSubject = (index: number) => {
-		const updatedSubjects = [...subjects];
-		updatedSubjects.splice(index, 1);
-		setSubjects(updatedSubjects);
-	};
-
-	const handleSubmit = async () => {
 		try {
-			// Create the request payload
-			const requestData = {
-				studentName,
-				rollNumber,
-				course,
-				subjects: subjects.map((subject) => ({
-					name: subject.name,
-					score: subject.score,
-				})),
-			};
+			const formData = new FormData();
+			if (!studentName || !registrationNumber) return;
+			formData.append("studentName", studentName);
+			formData.append("registrationNumber", registrationNumber);
+			formData.append("mothersName", mothersName);
+			formData.append("fathersName", fathersName);
 
-			// Make the API call using Axios
+			if (!selectedFile) return;
+			formData.append("resultPdf", selectedFile);
+
+			if (!studentAvatar) return;
+			formData.append("avatar", studentAvatar);
+
 			setIsLoading(true);
-			const response = await axios.post("/api/addResult", requestData);
-			console.log(response.data); //! we have to check the response by logging it
+			const response = await axios.post(
+				"https://pick-life-backend.onrender.com/",
+				formData,
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				}
+			);
+			console.log(response.data);
+
 			setIsLoading(false);
-			// Handle the response
+
 			if (response.data.success) {
 				console.log("Student result saved successfully:", response.data.data);
 				toast({
 					title: "Result Saved!",
-					description: `Result with roll No ${rollNumber} saved successfully`,
+					description: `Result with roll No ${registrationNumber} saved successfully`,
 				});
-				// Reset the form fields
 				setStudentName("");
-				setRollNumber("");
-				setCourse("");
-				setSubjects([{ name: "", score: "" }]);
+				setRegistrationNumber("");
+				setStudentAvatar(null);
+				setSelectedFile(null);
+				setFathersName("");
+				setMothersName("");
 				nameInputRef.current?.focus();
 			} else {
 				throw new Error(response.data.message);
-
-				// Handle the error appropriately (e.g., show an error message to the user)
 			}
 		} catch (error: any) {
 			setIsLoading(false);
 			let errorMessage;
 			if (error.response) {
-				// Server responded with an error status code (e.g., 404, 500)
 				errorMessage = `Server Error: ${error.response.status}`;
 			} else if (error.request) {
-				// Request was made but no response received
 				errorMessage = "No response from server";
 			} else {
-				// Something else happened while setting up the request
-				errorMessage = `${error.message}`;
+				errorMessage = error.message;
 			}
 			setError(errorMessage);
 			toast({
-				title: "Result Saved Failed",
+				title: "Result Save Failed",
 				description: errorMessage,
 			});
 		}
@@ -124,7 +112,7 @@ const AddStudentResult = () => {
 	return (
 		<div>
 			<form
-				// onSubmit={handleSubmit}
+				onSubmit={handleSubmit}
 				className="max-w-md mx-auto bg-muted text-muted-foreground shadow-md rounded px-8 pt-6 pb-8 mb-4"
 			>
 				<div className="mb-4">
@@ -143,124 +131,84 @@ const AddStudentResult = () => {
 					/>
 				</div>
 				<div className="mb-4">
-					<label className="block font-bold mb-2" htmlFor="rollNumber">
-						Roll Number
+					<label className="block font-bold mb-2" htmlFor="motherName">
+						Mother Name
 					</label>
 					<Input
 						className="bg-background text-foreground"
-						id="rollNumber"
+						id="motherName"
 						type="text"
-						placeholder="Enter roll number"
-						value={rollNumber}
-						onChange={(e) => setRollNumber(e.target.value)}
+						placeholder="Enter student name"
+						value={mothersName}
+						onChange={(e) => setMothersName(e.target.value)}
 						required
+						ref={nameInputRef}
 					/>
 				</div>
 				<div className="mb-4">
-					<label className="block font-bold mb-2" htmlFor="course">
-						Course
+					<label className="block font-bold mb-2" htmlFor="fatherName">
+						Father Name
 					</label>
 					<Input
 						className="bg-background text-foreground"
-						id="course"
+						id="fatherName"
 						type="text"
-						placeholder="Enter course name"
-						value={course}
-						onChange={(e) => setCourse(e.target.value)}
+						placeholder="Enter student name"
+						value={fathersName}
+						onChange={(e) => setFathersName(e.target.value)}
+						required
+						ref={nameInputRef}
+					/>
+				</div>
+
+				<div className="mb-4">
+					<label className="block font-bold mb-2" htmlFor="registrationNumber">
+						Registration Number
+					</label>
+					<Input
+						className="bg-background text-foreground"
+						id="registrationNumber"
+						type="text"
+						placeholder="Enter roll number"
+						value={registrationNumber}
+						onChange={(e) => setRegistrationNumber(e.target.value)}
 						required
 					/>
 				</div>
-				<div className="mb-6">
-					<label className="block font-bold mb-2" htmlFor="subjects">
-						Subjects
+
+				<div className="mb-4">
+					<label className="block font-bold mb-2" htmlFor="avatar">
+						Upload Photo
 					</label>
-					{subjects.map((subject, index) => (
-						<div
-							key={index}
-							className="flex mb-2 items-center justify-between gap-2"
-						>
-							<Input
-								className="bg-background text-foreground"
-								type="text"
-								name="name"
-								placeholder="Subject name"
-								value={subject.name}
-								onChange={(e) => handleSubjectChange(index, e)}
-							/>
-							<Input
-								className="bg-background text-foreground"
-								type="number"
-								name="score"
-								placeholder="Score"
-								value={subject.score}
-								onChange={(e) => handleSubjectChange(index, e)}
-							/>
-							<Button
-								type="button"
-								variant={"destructive"}
-								onClick={() => handleRemoveSubject(index)}
-							>
-								<FaTrashAlt />
-							</Button>
-							<Button
-								type="button"
-								variant={"outline"}
-								onClick={() => handleDuplicateSubject(index)}
-							>
-								<HiDuplicate />
-							</Button>
-						</div>
-					))}
+					<Input
+						className="bg-background text-foreground"
+						name="avatar"
+						id="avatar"
+						type="file"
+						required
+						onChange={handleAvatarChange}
+					/>
 				</div>
-				{/* <div className="flex items-center justify-between">
-					
-				</div> */}
-				<div>
-					<AlertDialog>
-						<p className="flex items-center justify-between">
-							<Button onClick={handleAddSubject}>Add Subject</Button>
-							<AlertDialogTrigger>
-								<Button type="button">Add Result</Button>
-							</AlertDialogTrigger>
-						</p>
-						<AlertDialogContent>
-							<AlertDialogHeader>
-								<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-								<AlertDialogDescription>
-									<p className=" p-4 rounded shadow">
-										<p className="flex items-center justify-between mb-4">
-											<p className="font-semibold text-lg">
-												{studentName} ({rollNumber})
-											</p>
-											<p className="text-gray-600">{course}</p>
-										</p>
-
-										<p>
-											{subjects.map((sub, idx) => (
-												<p
-													key={idx}
-													className="flex items-center justify-between mb-2"
-												>
-													<span className="font-medium">{sub.name}</span>
-													<span className="font-semibold">
-														Score: {sub.score}
-													</span>
-												</p>
-											))}
-										</p>
-									</p>
-								</AlertDialogDescription>
-							</AlertDialogHeader>
-							<AlertDialogFooter>
-								<AlertDialogCancel>Cancel</AlertDialogCancel>
-
-								<AlertDialogAction onClick={handleSubmit}>
-									{isLoading ? "Loading..." : "Continue"}
-								</AlertDialogAction>
-							</AlertDialogFooter>
-						</AlertDialogContent>
-					</AlertDialog>
+				<div className="mb-4">
+					<label className="block font-bold mb-2" htmlFor="result">
+						Upload Result
+					</label>
+					<Input
+						className="bg-background text-foreground"
+						name="resultPdf"
+						id="result"
+						type="file"
+						required
+						onChange={handleFileChange}
+					/>
 				</div>
+				<Button
+					type="submit"
+					disabled={isLoading}
+					className={`${isLoading ? "cursor-not-allowed" : "cursor-pointer"}`}
+				>
+					{isLoading ? "Submitting..." : "Submit Result"}
+				</Button>
 			</form>
 		</div>
 	);

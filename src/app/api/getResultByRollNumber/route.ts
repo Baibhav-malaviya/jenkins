@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import StudentResult from "@/model/result.model";
+import Result from "@/model/result.model";
 import connectDB from "../../../../connectDb/connectDB";
 
 export async function GET(req: NextRequest) {
@@ -8,18 +8,19 @@ export async function GET(req: NextRequest) {
 	try {
 		// Get the roll number from the request body
 		const { searchParams } = new URL(req.url);
-		const rollNumber = searchParams.get("rollNumber");
-
+		const registrationNumber = searchParams.get("registrationNumber");
+		console.log("REGISTRATION: ", registrationNumber);
 		// Find the student result by roll number
-		const studentResult = await StudentResult.findOne({ rollNumber });
-
+		registrationNumber;
+		const studentResult = await Result.findOne({ registrationNumber });
+		console.log("STUDENT RESULT: ", studentResult);
 		if (!studentResult) {
 			return NextResponse.json(
 				{
 					success: false,
-					message: `Student with roll number ${rollNumber} not found`,
+					message: `Student with roll number ${registrationNumber} not found`,
 				},
-				{ status: 404 }
+				{ status: 403 }
 			);
 		}
 
