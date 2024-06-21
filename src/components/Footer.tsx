@@ -41,10 +41,12 @@ const Footer = () => {
 					{/* Contact Information */}
 					<div>
 						<h3 className="font-bold mb-4">Contact Us</h3>
-						<p>123 Main Street</p>
-						<p>City, State, ZIP</p>
-						<p>Email: info@coachingcenter.com</p>
-						<p>Phone: (123) 456-7890</p>
+						<p>
+							Picklife institute, Near police station, Above HDFC bank, Joga
+						</p>
+						<p>Mansa, Punjab</p>
+						<p>Email: picklifeonline@gmail.com</p>
+						<p>Phone: 8280905909</p>
 					</div>
 
 					{/* Social Media Links */}
@@ -52,28 +54,18 @@ const Footer = () => {
 						<h3 className="font-bold mb-4">Follow Us</h3>
 						<div className="flex space-x-4">
 							<a
-								href="#"
+								href="https://www.facebook.com/PickLifeImmigration"
+								target="blank"
 								className=" hover:text-primary transition-colors duration-300"
 							>
 								<FaFacebook className="text-2xl" />
 							</a>
 							<a
-								href="#"
-								className=" hover:text-primary transition-colors duration-300"
-							>
-								<FaTwitter className="text-2xl" />
-							</a>
-							<a
-								href="#"
+								href="https://www.instagram.com/picklife_immigration?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+								target="blank"
 								className=" hover:text-primary transition-colors duration-300"
 							>
 								<FaInstagram className="text-2xl" />
-							</a>
-							<a
-								href="#"
-								className=" hover:text-primary transition-colors duration-300"
-							>
-								<FaLinkedin className="text-2xl" />
 							</a>
 						</div>
 					</div>

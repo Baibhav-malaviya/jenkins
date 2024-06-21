@@ -1,15 +1,36 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import axios from "axios";
 
 const HeroSection = () => {
 	const [email, setEmail] = useState("");
 	const [showModal, setShowModal] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
-	const handleEmailSubmit = (e: any) => {
+	const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		//todo Handle email submission logic here
-		setShowModal(true);
+		try {
+			setIsLoading(true);
+			const response = await axios.post("/api/email", { email });
+			setIsLoading(false);
+			console.log("Email submission response: ", response.data);
+
+			if (response.data.success) {
+				setShowModal(true);
+				// Reset email field after successful submission
+				setEmail("");
+				// You might want to show a success message to the user here
+			} else {
+				// Handle unsuccessful submission
+				console.error("Email submission failed:", response.data.message);
+				// You might want to show an error message to the user here
+			}
+		} catch (error) {
+			console.error("Error submitting email:", error);
+			setIsLoading(false);
+			// You might want to show an error message to the user here
+		}
 	};
 
 	return (
@@ -43,7 +64,15 @@ const HeroSection = () => {
 							placeholder="Enter your email"
 							className="px-4 py-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 w-full sm:w-auto focus:outline-none text-foreground"
 						/>
-						<Button type="submit">Get Started</Button>
+						<Button
+							type="submit"
+							className={`${
+								isLoading ? "cursor-not-allowed opacity: 90" : "cursor-pointer"
+							}`}
+							disabled={isLoading}
+						>
+							Get Started
+						</Button>
 					</form>
 					{showModal && (
 						<div className="fixed text-foreground inset-0 z-50 flex items-center justify-center">

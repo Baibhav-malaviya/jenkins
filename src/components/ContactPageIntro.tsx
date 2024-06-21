@@ -12,28 +12,28 @@ const ContactPageIntro = () => {
 					information or assistance? We&apos;re here to help! Our friendly and
 					knowledgeable team is just a message away.
 				</p>
-				<div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-6">
+				<div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
 					<a
 						href="mailto:info@coachingcenter.com"
 						className="flex items-center text-foreground hover:text-green-500 transition-colors"
 					>
 						<FaEnvelope className="mr-2" />
 						<span className="text-sm md:text-base">
-							info@coachingcenter.com
+							picklifeonline@gmail.com
 						</span>
 					</a>
 					<a
-						href="tel:+1234567890"
+						href="tel:+918280905909"
 						className="flex items-center text-foreground hover:text-green-500 transition-colors"
 					>
 						<FaPhoneAlt className="mr-2" />
-						<span className="text-sm md:text-base">+1 (234) 567-890</span>
+						<span className="text-sm md:text-base">8280905909</span>
 					</a>
 				</div>
-				<Button size="lg" variant="default" className="w-full md:w-auto">
-					{/* //!todo make it working */}
-					Contact Us
-				</Button>
+				{/* <Button size="lg" variant="default" className="w-full md:w-auto"> */}
+				{/* //!todo make it working */}
+				{/* Contact Us */}
+				{/* </Button> */}
 			</div>
 		</div>
 	);
