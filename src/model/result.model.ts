@@ -8,6 +8,7 @@ export interface IResult extends Document {
 	mothersName: string;
 	course?: string;
 	resultPdf: string;
+	deleted: boolean;
 	avatar: string;
 }
 
@@ -20,6 +21,7 @@ const ResultSchema: Schema = new Schema(
 		mothersName: { type: String, required: true },
 		course: { type: String },
 		resultPdf: { type: String, required: true, unique: true },
+		deleted: { type: Boolean, default: false },
 		avatar: { type: String, required: true },
 	},
 	{ timestamps: true }

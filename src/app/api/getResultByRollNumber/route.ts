@@ -12,7 +12,10 @@ export async function GET(req: NextRequest) {
 		console.log("REGISTRATION: ", registrationNumber);
 		// Find the student result by roll number
 		registrationNumber;
-		const studentResult = await Result.findOne({ registrationNumber });
+		const studentResult = await Result.findOne({
+			registrationNumber,
+			deleted: false,
+		});
 		console.log("STUDENT RESULT: ", studentResult);
 		if (!studentResult) {
 			return NextResponse.json(

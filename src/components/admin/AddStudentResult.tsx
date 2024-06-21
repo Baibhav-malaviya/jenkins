@@ -3,26 +3,7 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { FaTrashAlt } from "react-icons/fa";
-import { HiDuplicate } from "react-icons/hi";
-
-import {
-	AlertDialog,
-	AlertDialogAction,
-	AlertDialogCancel,
-	AlertDialogContent,
-	AlertDialogDescription,
-	AlertDialogFooter,
-	AlertDialogHeader,
-	AlertDialogTitle,
-	AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { useToast } from "../ui/use-toast";
-
-interface Subject {
-	name: string;
-	score: string;
-}
 
 const AddStudentResult = () => {
 	const [studentName, setStudentName] = useState("");
@@ -110,7 +91,7 @@ const AddStudentResult = () => {
 	};
 
 	return (
-		<div>
+		<div className="w-full ">
 			<form
 				onSubmit={handleSubmit}
 				className="max-w-md mx-auto bg-muted text-muted-foreground shadow-md rounded px-8 pt-6 pb-8 mb-4"
