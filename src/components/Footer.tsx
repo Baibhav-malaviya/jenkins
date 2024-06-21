@@ -46,7 +46,7 @@ const Footer = () => {
 						</p>
 						<p>Mansa, Punjab</p>
 						<p>Email: picklifeonline@gmail.com</p>
-						<p>Phone: 8280905909</p>
+						<p>Phone: 8280905909, 6284978411</p>
 					</div>
 
 					{/* Social Media Links */}

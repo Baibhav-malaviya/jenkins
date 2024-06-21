@@ -46,7 +46,7 @@ const HeroSection = () => {
 			<div className="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
 				<div className="max-w-3xl mx-auto text-center text-white px-4">
 					<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6">
-						Unlock Your Potential with Our IELTS Coaching
+						Unlock Your Potential with Our Coaching Institute
 					</h1>
 					<p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8">
 						Achieve your dream score and open doors to your future. Our expert
@@ -82,7 +82,7 @@ const HeroSection = () => {
 								</h2>
 								<p className="text-sm md:text-base mb-4 md:mb-6">
 									We&apos;ll get in touch with you shortly to provide more
-									information about our IELTS coaching programs.
+									information about our institution.
 								</p>
 								<Button onClick={() => setShowModal(false)}>Close</Button>
 							</div>
