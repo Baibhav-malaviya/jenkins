@@ -1,0 +1,227 @@
+[
+	{
+		"id": 1,
+		"courseTitle": "C language",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124893/pick-life/c-background_uzejwh.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/c_-logo_rsf5ig.png",
+		"categories": ["Programming"],
+		"introduction": "C is a powerful general-purpose programming language that forms the foundation of many modern languages. This course introduces you to the fundamentals of C programming, essential for any aspiring software developer.",
+		"objective": "By the end of this course, you'll be able to write, compile, and debug C programs, understand memory management, and implement data structures and algorithms using C."
+	},
+	{
+		"id": 2,
+		"courseTitle": "C++",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124893/pick-life/c_-background_khqizd.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/c_rabkqz.png",
+		"categories": ["Programming"],
+		"introduction": "C++ extends C with object-oriented features, making it one of the most versatile languages in the industry. This course covers both procedural and object-oriented programming paradigms in C++.",
+		"objective": "You'll learn to design and implement complex software systems, understand advanced concepts like polymorphism and templates, and gain skills applicable to game development, system programming, and more."
+	},
+	{
+		"id": 3,
+		"courseTitle": "Core-java",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124893/pick-life/core-java-background_cqjxkw.png",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/java-logo_zmmolo.jpg",
+		"categories": ["Programming"],
+		"introduction": "Java is a class-based, object-oriented programming language designed for portability and cross-platform development. This course focuses on core Java concepts essential for any Java developer.",
+		"objective": "By course completion, you'll be proficient in Java syntax, object-oriented principles, exception handling, and core Java APIs. You'll be prepared for both desktop and enterprise Java development."
+	},
+	{
+		"id": 4,
+		"courseTitle": "PHP",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/php-background_v8fagn.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/PHP-logo.svg_ked3ah.png",
+		"categories": ["Programming", "Web Development"],
+		"introduction": "PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. This course covers PHP fundamentals and its application in web development.",
+		"objective": "You'll learn to create dynamic web pages, interact with databases, handle forms, and implement server-side logic. By the end, you'll be able to build full-fledged web applications using PHP."
+	},
+	{
+		"id": 5,
+		"courseTitle": "Python",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/python-background_sf9pei.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124893/pick-life/python-logo_q0oghr.jpg",
+		"categories": ["Programming"],
+		"introduction": "Python is a high-level, interpreted programming language known for its simplicity and versatility. This course introduces Python programming from basics to advanced concepts.",
+		"objective": "You'll master Python syntax, data structures, file I/O, and object-oriented programming. Additionally, you'll explore Python's applications in web development, data analysis, and machine learning."
+	},
+	{
+		"id": 6,
+		"courseTitle": "HTML",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719125831/pick-life/html-background_nga0uq.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719125765/pick-life/html-logo.png",
+		"categories": ["Web Development"],
+		"introduction": "HTML (Hypertext Markup Language) is the standard markup language for creating web pages. This course covers HTML5 and its role in modern web development.",
+		"objective": "By the end of this course, you'll be able to create structured, semantic web pages, understand the document object model (DOM), and lay the foundation for learning CSS and JavaScript."
+	},
+	{
+		"id": 7,
+		"courseTitle": "Wordpress",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124893/pick-life/wordpress-background_elkbqq.webp",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124893/pick-life/wordpress-logo_std1mw.jpg",
+		"categories": ["Web Development"],
+		"introduction": "WordPress is the world's most popular content management system, powering over 40% of all websites. This course teaches you how to build and manage WordPress websites.",
+		"objective": "You'll learn to install and configure WordPress, customize themes, use plugins, optimize for SEO, and even develop custom themes and plugins. By the end, you'll be able to create professional WordPress sites."
+	},
+	{
+		"id": 8,
+		"courseTitle": "Microsoft .NET",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124920/pick-life/NET-background_vtk54q.avif",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124921/pick-life/NET-logo_r9wewo.png",
+		"categories": ["Programming", "Software Development"],
+		"introduction": ".NET is a free, cross-platform, open source developer platform for building many different types of applications. This course covers the .NET framework and C# programming language.",
+		"objective": "You'll learn to develop web, mobile, desktop, cloud, and IoT applications using .NET. The course covers C# programming, ASP.NET for web development, and an introduction to Azure cloud services."
+	},
+	{
+		"id": 9,
+		"courseTitle": "Office Automation",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124920/pick-life/office-automation-background_z38fku.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124919/pick-life/office-automation-logo_vqpatu.webp",
+		"categories": ["Office Skills"],
+		"introduction": "Office automation involves using computer systems to manage office tasks. This course covers essential software tools for modern office productivity.",
+		"objective": "You'll become proficient in Microsoft Office suite, including Word, Excel, PowerPoint, and Outlook. You'll also learn about cloud-based collaboration tools and basic data analysis skills."
+	},
+	{
+		"id": 10,
+		"courseTitle": "Coral Draw",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124916/pick-life/coral-draw-background_lkt5zt.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124918/pick-life/coral-draw-logo_sewlff.avif",
+		"categories": ["Design"],
+		"introduction": "CorelDRAW is a vector graphics editor developed by Corel Corporation. This course introduces you to digital graphic design using CorelDRAW.",
+		"objective": "By the end of this course, you'll be able to create logos, brochures, and other marketing materials. You'll master tools for illustration, layout, and typography in CorelDRAW."
+	},
+	{
+		"id": 11,
+		"courseTitle": "Photoshop",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124916/pick-life/photoshop-background_vbap0g.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124915/pick-life/photoshop-logo_yn5pi4.png",
+		"categories": ["Design"],
+		"introduction": "Adobe Photoshop is the industry-standard software for raster graphics editing and digital art. This course covers Photoshop from basics to advanced techniques.",
+		"objective": "You'll learn photo editing, digital painting, compositing, and design for both print and web. By course end, you'll be able to create professional-grade graphics and manipulate images with expertise."
+	},
+	{
+		"id": 12,
+		"courseTitle": "Tally",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124913/pick-life/tally-background_p6woct.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124915/pick-life/tally-logo_xqlu1o.png",
+		"categories": ["Business"],
+		"introduction": "Tally is a comprehensive business management software widely used for accounting, inventory, and payroll management. This course provides hands-on training in Tally.",
+		"objective": "You'll learn to manage financial accounts, create invoices, track inventory, generate financial reports, and handle GST compliance using Tally. This course prepares you for accounting roles in various industries."
+	},
+	{
+		"id": 13,
+		"courseTitle": "Busy",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124912/pick-life/busy-background_y5cqps.webp",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124913/pick-life/busy-logo_b5tchn.png",
+		"categories": ["Business"],
+		"introduction": "Busy is an integrated business accounting software popular among small and medium enterprises. This course offers comprehensive training in Busy accounting software.",
+		"objective": "By course completion, you'll be proficient in managing accounts, inventory, and statutory compliance using Busy. You'll be prepared for accounting roles in businesses using this software."
+	},
+	{
+		"id": 14,
+		"courseTitle": "Competitive Exam",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124912/pick-life/competitive-exam-background_vzaiqh.webp",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124911/pick-life/competitive-exam-logo_iuutsj.jpg",
+		"categories": ["Career Development"],
+		"introduction": "This course prepares you for various competitive exams, focusing on common topics and test-taking strategies applicable across different examinations.",
+		"objective": "You'll develop strong analytical and problem-solving skills, improve your time management, and gain confidence in tackling various types of questions commonly found in competitive exams."
+	},
+	{
+		"id": 15,
+		"courseTitle": "Interview Preparation",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124910/pick-life/interview-background_tshuox.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124912/pick-life/interview-logo_ju2ohq.jpg",
+		"categories": ["Career Development"],
+		"introduction": "This course equips you with essential skills and strategies to excel in job interviews across various industries and roles.",
+		"objective": "You'll learn to research companies, prepare compelling answers, handle tough questions, and present yourself professionally. The course also covers resume writing and post-interview follow-up strategies."
+	},
+	{
+		"id": 16,
+		"courseTitle": "Spoken English",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124908/pick-life/sopken-english-background_etscdh.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124911/pick-life/spoken-english-logo_aec2xm.jpg",
+		"categories": ["Languages"],
+		"introduction": "This course focuses on improving your English speaking skills, covering pronunciation, fluency, vocabulary, and conversational skills.",
+		"objective": "By the end of this course, you'll be able to communicate confidently in English in various social and professional settings. You'll also improve your listening comprehension and spontaneous speaking abilities."
+	},
+	{
+		"id": 17,
+		"courseTitle": "French",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124908/pick-life/french-class-background_jw5jgd.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124907/pick-life/french-class-logo_usasbu.webp",
+		"categories": ["Languages"],
+		"introduction": "This French language course takes you from beginner to intermediate level, covering all aspects of language learning: speaking, listening, reading, and writing.",
+		"objective": "You'll be able to engage in basic French conversations, understand simple texts, and write short compositions. The course also introduces French culture and prepares you for further advanced study."
+	},
+	{
+		"id": 18,
+		"courseTitle": "Typing",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124907/pick-life/typing-background_rjgor2.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124907/pick-life/typing-logo_rmkxet.jpg",
+		"categories": ["Office Skills"],
+		"introduction": "This course teaches touch typing, aiming to increase your typing speed and accuracy, essential skills in today's digital workplace.",
+		"objective": "By course end, you'll be able to type without looking at the keyboard, significantly increasing your typing speed and accuracy. You'll also learn proper ergonomics to prevent repetitive strain injuries."
+	},
+	{
+		"id": 19,
+		"courseTitle": "Industrial Training",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124903/pick-life/industrial-training-background_fraqrg.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124903/pick-life/industrial-training-logo_uxnve2.jpg",
+		"categories": ["Career Development"],
+		"introduction": "This course provides hands-on experience in real industrial settings, bridging the gap between academic knowledge and practical application.",
+		"objective": "You'll gain industry-specific skills, understand workplace dynamics, and build a professional network. This training enhances your employability and prepares you for a smooth transition into the workforce."
+	},
+	{
+		"id": 20,
+		"courseTitle": "CPCF",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124902/pick-life/cpcf-background_mxojmf.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124903/pick-life/cpcf-logo_ed7pfn.png",
+		"categories": ["IT Certification"],
+		"introduction": "The Certified Professional in Computer Forensics (CPCF) course prepares you for a career in digital forensics and cybercrime investigation.",
+		"objective": "You'll learn to collect, analyze, and report on digital evidence, understand legal and ethical issues in computer forensics, and prepare for the CPCF certification exam."
+	},
+	{
+		"id": 21,
+		"courseTitle": "APCA",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124902/pick-life/apca-background_bpyuqi.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124902/pick-life/apca-logo_lcjujj.jpg",
+		"categories": ["IT Certification"],
+		"introduction": "The Advanced Professional in Cloud Architecture (APCA) certification course covers advanced concepts in cloud computing and architecture.",
+		"objective": "You'll gain expertise in designing, implementing, and managing complex cloud solutions across multiple platforms. This course prepares you for the APCA certification exam and senior cloud architect roles."
+	},
+	{
+		"id": 22,
+		"courseTitle": "BPCF",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124902/pick-life/bpcf-background_tmvhfo.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124902/pick-life/bpcf-logo_v6og29.png",
+		"categories": ["IT Certification"],
+		"introduction": "The Basic Professional in Computer Forensics (BPCF) course introduces the fundamentals of digital forensics and cybercrime investigation.",
+		"objective": "You'll learn basic techniques for digital evidence collection and analysis, understand cybercrime laws, and prepare for entry-level positions in computer forensics. This course also prepares you for the BPCF certification."
+	},
+	{
+		"id": 23,
+		"courseTitle": "BPCT",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124901/pick-life/bpct-background_lvvqfw.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124902/pick-life/bpct-logo_h5vw0w.webp",
+		"categories": ["IT Certification"],
+		"introduction": "The Basic Professional in Cloud Technology (BPCT) course provides a foundation in cloud computing concepts and technologies.",
+		"objective": "You'll understand cloud service models, deployment strategies, and basic cloud security. This course prepares you for entry-level cloud roles and the BPCT certification exam."
+	},
+	{
+		"id": 24,
+		"courseTitle": "Cal-c",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124895/pick-life/cal-c-background_sszvky.webp",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124903/pick-life/cpcf-logo_ed7pfn.png",
+		"categories": ["IT Certification"],
+		"introduction": "The Certified Associate in Linux-C (Cal-C) course focuses on Linux system administration using the C programming language.",
+		"objective": "You'll learn to write C programs for Linux systems, understand Linux internals, and develop system-level applications. This course prepares you for the Cal-C certification and Linux development roles."
+	},
+	{
+		"id": 25,
+		"courseTitle": "Hardware",
+		"backgroundImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124894/pick-life/hardware-background_rgqqdf.jpg",
+		"logoImage": "https://res.cloudinary.com/baibhavmalaviya/image/upload/v1719124895/pick-life/hardware-logo_pl0hnc.png",
+		"categories": ["IT"],
+		"introduction": "This comprehensive hardware course covers computer components, assembly, troubleshooting, and maintenance of various computing devices.",
+		"objective": "By the end of this course, you'll be able to build, upgrade, and repair computers and other digital devices. You'll also understand networking hardware and be prepared for IT support roles."
+	}
+]
