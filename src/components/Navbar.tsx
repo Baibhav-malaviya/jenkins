@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { Separator } from "./ui/separator";
 import { ModeToggle } from "./ModeToggler";
+import Logo from "./Logo";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +25,7 @@ const Navbar = () => {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center">
-						<Link
-							href="/"
-							className="flex-shrink-0 text-xl font-bold text-red-500"
-						>
-							Pick Life
-						</Link>
+						<Logo />
 					</div>
 					{/* Desktop responsive */}
 					<div className="hidden sm:block">

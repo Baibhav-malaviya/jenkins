@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Logo from "./Logo";
 
 const Footer = () => {
 	return (
@@ -8,9 +9,7 @@ const Footer = () => {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 					{/* Logo and Copyright */}
 					<div>
-						<Link href="/" className="text-xl font-bold text-primary">
-							Logo
-						</Link>
+						<Logo size="sm" />
 						<p className="mt-2">
 							&copy; {new Date().getFullYear()} Coaching Center. All rights
 							reserved.

@@ -6,9 +6,20 @@ import {
 	FaLaptopCode,
 	FaClipboardCheck,
 	FaTrophy,
+	FaCertificate,
 } from "react-icons/fa";
 
 const whyUsData = [
+	{
+		title: "IDP Certified Trainer",
+		description:
+			"Our IELTS training program is led by IDP certified trainers who have undergone rigorous training and certification processes. This ensures that you receive expert guidance aligned with the latest IELTS standards and best practices.",
+		icon: (
+			<div className="p-[6px] from-amber-400 to-amber-200 h-fit rounded-md border-amber-500 border-[2px] bg-gradient-to-br">
+				<FaCertificate className="text-4xl text-amber-500" />
+			</div>
+		),
+	},
 	{
 		title: "Experienced and Qualified Instructors",
 		description:
@@ -68,9 +79,16 @@ const whyUsData = [
 export default function WhyUs() {
 	return (
 		<div>
-			<h1 className="text-2xl sm:text-3xl md:text-4xl text-primary font-bold text-center mb-8">
-				Why Choose Our IELTS Coaching Center?
-			</h1>
+			<header className="text-center my-8">
+				<h1 className="text-4xl font-bold text-foreground mb-3">
+					Why Choose Our Test Preparation Coaching?
+				</h1>
+				<p className="text-lg max-w-xl mx-auto">
+					Learn what makes our coaching exceptional and how we help you achieve
+					top scores.
+				</p>
+			</header>
+
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 px-5 sm:px-10">
 				{whyUsData.map((data, idx) => (
 					<WhyUsCard
