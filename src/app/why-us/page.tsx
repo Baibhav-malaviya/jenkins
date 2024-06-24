@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import WhyUsCard from "@/components/WhyUsCard";
 import {
@@ -8,6 +9,7 @@ import {
 	FaTrophy,
 	FaCertificate,
 } from "react-icons/fa";
+import AnimationWrapper from "@/components/AnimationWrapper";
 
 const whyUsData = [
 	{
@@ -91,12 +93,13 @@ export default function WhyUs() {
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 px-5 sm:px-10">
 				{whyUsData.map((data, idx) => (
-					<WhyUsCard
-						key={idx}
-						title={data.title}
-						description={data.description}
-						icon={data.icon}
-					/>
+					<AnimationWrapper key={idx} index={idx}>
+						<WhyUsCard
+							title={data.title}
+							description={data.description}
+							icon={data.icon}
+						/>
+					</AnimationWrapper>
 				))}
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 "use client";
 import HeroSection from "@/components/HeroSection";
+import PhotoGallery from "@/components/PhotoGallery";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 const testimonials = [
@@ -24,21 +25,35 @@ const testimonials = [
 	},
 ];
 
+const images = [
+	"/glimps-image/IMG-20240622-WA0021.jpg",
+	"/glimps-image/IMG-20240622-WA0025.jpg",
+	"/glimps-image/IMG-20240622-WA0029.jpg",
+	"/glimps-image/IMG-20240622-WA0030.jpg",
+	"/glimps-image/IMG-20240622-WA0031.jpg",
+	"/glimps-image/IMG-20240622-WA0032.jpg",
+	"/glimps-image/IMG-20240622-WA0034.jpg",
+	"/glimps-image/IMG-20240622-WA0044.jpg",
+
+	// Add more image paths as needed
+];
+
 export default function Home() {
 	return (
 		<section>
 			<HeroSection />
 			<div>
-				<h2 className="text-center font-bold text-2xl md:text-3xl my-8 text-orange-500">
-					Champions of Success, Our Star Achievers
-				</h2>
+				<header className="text-center my-8">
+					<h1 className="text-4xl font-bold text-foreground mb-3">
+						Our Coaching Environment
+					</h1>
+					<p className="text-lg max-w-xl mx-auto">
+						Take a glimpse into our vibrant learning spaces and see how we
+						foster success.
+					</p>
+				</header>
+				<PhotoGallery images={images} />
 			</div>
-			<InfiniteMovingCards
-				items={testimonials}
-				direction="right"
-				speed="slow"
-				className="my-5"
-			/>
 		</section>
 	);
 }

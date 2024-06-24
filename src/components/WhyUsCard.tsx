@@ -16,7 +16,7 @@ interface IObj {
 
 const WhyUsCard = ({ title, description, icon }: IObj) => {
 	return (
-		<Card className="flex bg-muted flex-col items-center">
+		<Card className="flex bg-muted flex-col items-center h-full w-full">
 			<CardHeader className="flex flex-row items-start space-x-4 w-full  ">
 				{icon}
 

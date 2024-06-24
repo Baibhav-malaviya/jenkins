@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import courses from "../../../data/courses.json"; //courses data from data/courses.json file
 import CourseCard from "@/components/CourseCard";
+import AnimationWrapper from "@/components/AnimationWrapper";
 
 // const courses = [
 // 	{
@@ -211,13 +212,15 @@ export default function Courses() {
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-2 sm:px-6 md:px-24 place-items-center">
 				{filteredCourses.map((course, idx) => (
-					<CourseCard
-						id={course.id}
-						key={idx}
-						backgroundImage={course.backgroundImage}
-						logoImage={course.logoImage}
-						title={course.courseTitle}
-					/>
+					<AnimationWrapper key={idx} index={idx}>
+						<CourseCard
+							id={course.id}
+							key={idx}
+							backgroundImage={course.backgroundImage}
+							logoImage={course.logoImage}
+							title={course.courseTitle}
+						/>
+					</AnimationWrapper>
 				))}
 			</div>
 		</section>
