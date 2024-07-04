@@ -1,7 +1,9 @@
+"use client";
+import AboutLoading from "@/components/AboutLoading";
 import React from "react";
 
 function Loading() {
-	return <div>Loading about page...</div>;
+	return <AboutLoading />;
 }
 
 export default Loading;

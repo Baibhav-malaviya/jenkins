@@ -14,8 +14,8 @@ const PhotoGallery = ({ images }: any) => {
 								<Image
 									src={src}
 									alt={`Coaching image ${index + 1}`}
-									layout="fill"
-									objectFit="cover"
+									fill
+									style={{ objectFit: "cover" }}
 									className="transition-transform duration-300 hover:scale-110"
 								/>
 							</div>

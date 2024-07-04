@@ -1,7 +1,5 @@
 "use client";
 import PhotoGallery from "../../components/PhotoGallery";
-import UnderDevelopment from "@/components/UnderDevelopment";
-import Image from "next/image";
 import React from "react";
 
 const images = [
