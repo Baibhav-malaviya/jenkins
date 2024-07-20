@@ -9,15 +9,30 @@ pipeline {
     stages {
         stage("checkout") {
             steps {
-                checkout scm
+                script {
+                    try {
+                        checkout scm
+                    } catch (Exception err) {
+                        env.FAILED_STAGE = 'checkout'
+                        throw err
+                    }
+                }
+               
            }
         }
 
         stage("setup") {
             steps {
-                sh "nvm install ${NODE_VERSION}"
-                sh "nvm use ${NODE_VERSION}"
-                sh "npm install"
+                script {
+                    try {
+                        sh "nvm install ${NODE_VERSION}"
+                        sh "nvm use ${NODE_VERSION}"
+                        sh "npm install"
+                    } catch (Exception err) {
+                        env.FAILED_STAGE = 'setup'
+                        throw err
+                    }
+                }
             }
         }
 
