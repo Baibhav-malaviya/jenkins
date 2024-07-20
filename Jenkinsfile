@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODE_VERSION = '18.1.1'
+        NODE_VERSION = '18.20.4'
         MAIL_RECIPIENT = 'baibhav.kr73@gmail.com, baibhav1433.be22@chitkara.edu.in'
     }
 
