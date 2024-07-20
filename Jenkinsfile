@@ -1,8 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS 22.5.1'  // This should match the name in your Jenkins NodeJS installation
+    }
+
     environment {
-        NODE_VERSION = 'Node v20.11.1'
         MAIL_RECIPIENT = 'baibhav.kr73@gmail.com, baibhav1433.be22@chitkara.edu.in'
     }
 
@@ -17,16 +20,14 @@ pipeline {
                         throw err
                     }
                 }
-               
-           }
+            }
         }
 
         stage("setup") {
             steps {
                 script {
                     try {
-                        sh "nvm install ${NODE_VERSION}"
-                        sh "nvm use ${NODE_VERSION}"
+                        sh 'node --version'  // Verify Node.js version
                         sh "npm install"
                     } catch (Exception err) {
                         env.FAILED_STAGE = 'setup'
