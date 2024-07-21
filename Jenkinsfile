@@ -7,6 +7,7 @@ pipeline {
 
     environment {
         MAIL_RECIPIENT = 'baibhav.kr73@gmail.com, baibhav1433.be22@chitkara.edu.in'
+        MONGODB_URI = 'mongodb+srv://baibhav:Thapar%4098@cluster0.o020bxn.mongodb.net'
     }
 
     stages {
