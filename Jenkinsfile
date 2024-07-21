@@ -6,7 +6,6 @@ pipeline {
     }
 
     environment {
-        MAIL_RECIPIENT = 'baibhav.kr73@gmail.com, baibhav1433.be22@chitkara.edu.in'
         MONGODB_URI = 'mongodb+srv://baibhav:Thapar%4098@cluster0.o020bxn.mongodb.net'
     }
 
@@ -58,9 +57,7 @@ pipeline {
         }
         success {
             echo "pipeline succeeded!"
-             mail to: "${MAIL_RECIPIENT}",
-                 subject: "Successful pipeline: ${currentBuild.fullDisplayName}",
-                 body: """
+            echo """
                     The pipeline ${currentBuild.fullDisplayName} has succeeded.
                     
                     Build URL: ${env.BUILD_URL}
@@ -68,13 +65,12 @@ pipeline {
                     All stages completed successfully.
                     
                     Please check the Jenkins console output for more details.
-                """
+            """
+             
         }
         failure {
             echo "pipeline failed"
-            mail to: "${MAIL_RECIPIENT}",
-                 subject: "Failed pipeline ${currentBuild.fullDisplayName}",
-                 body: """
+            echo """
                     The pipeline ${currentBuild.fullDisplayName} has failed.
                     
                     Build URL: ${env.BUILD_URL}
@@ -82,7 +78,7 @@ pipeline {
                     Failed Stage: ${env.FAILED_STAGE}
                     
                     Please check the Jenkins console output for more details.
-                """
+            """
         }
     }
 }
