@@ -31,6 +31,7 @@ pipeline {
                         sh "npm install"
                     } catch (Exception err) {
                         env.FAILED_STAGE = 'setup'
+                        echo "error message: ${e.message}"
                         throw err
                     }
                 }
