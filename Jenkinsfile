@@ -17,6 +17,7 @@ pipeline {
                         checkout scm
                     } catch (Exception err) {
                         env.FAILED_STAGE = 'checkout'
+                        echo "error message: ${err.message}"
                         throw err
                     }
                 }
@@ -31,7 +32,7 @@ pipeline {
                         sh "npm install"
                     } catch (Exception err) {
                         env.FAILED_STAGE = 'setup'
-                        echo "error message: ${e.message}"
+                        echo "error message: ${err.message}"
                         throw err
                     }
                 }
@@ -43,8 +44,9 @@ pipeline {
                 script {
                    try {
                         sh "npm run build"
-                    } catch (Exception e) {
+                    } catch (Exception err) {
                         env.FAILED_STAGE = 'build'
+                        echo "error message: ${err.message}"
                         throw e
                     }
                 }
