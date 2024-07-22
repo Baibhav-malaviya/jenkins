@@ -43,6 +43,8 @@ pipeline {
                 script {
                    try {
                         sh "npm run build"
+                        sh "mkdir -p build"
+                        archiveArtifacts artifacts: 'build/**/*', fingerprint: true
                     } catch (Exception e) {
                         env.FAILED_STAGE = 'build'
                         throw e
